@@ -3,17 +3,22 @@
 <html class="article-header-style-default">
 <head>
 	
-	<title>归档 : 2023/3 - XUEXUEのBLOG</title>
+	<title>如何用Python写一个贪吃蛇游戏 - XUEXUEのBLOG</title>
 	<meta charset="utf-8">
 	
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
-	<meta property="og:type" content="website">
-<meta property="og:title" content="XUEXUEのBLOG">
-<meta property="og:url" content="http://xue.moe/archives/2023/03/index.html">
+	<meta name="description" content="贪吃蛇游戏是一款经典的游戏，它的玩法简单、易上手，深受大众喜爱。在这篇文章中，我们将使用Python编写一个简单的贪吃蛇游戏，并通过代码分析来理解游戏的实现原理。 准备工作在开始编写代码之前，我们需要安装Pygame模块，它是一款用于开发2D游戏的Python模块。可以通过以下命令安装： 1pip install pygame 同时，我们还需要准备好游戏所需的图片资源，包括蛇的头、身体、食物等等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用Python写一个贪吃蛇游戏">
+<meta property="og:url" content="http://xue.moe/2023/03/14/%E5%A6%82%E4%BD%95%E7%94%A8Python%E5%86%99%E4%B8%80%E4%B8%AA%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/index.html">
 <meta property="og:site_name" content="XUEXUEのBLOG">
+<meta property="og:description" content="贪吃蛇游戏是一款经典的游戏，它的玩法简单、易上手，深受大众喜爱。在这篇文章中，我们将使用Python编写一个简单的贪吃蛇游戏，并通过代码分析来理解游戏的实现原理。 准备工作在开始编写代码之前，我们需要安装Pygame模块，它是一款用于开发2D游戏的Python模块。可以通过以下命令安装： 1pip install pygame 同时，我们还需要准备好游戏所需的图片资源，包括蛇的头、身体、食物等等。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-14T15:54:52.000Z">
+<meta property="article:modified_time" content="2023-03-14T16:02:31.389Z">
 <meta property="article:author" content="XUEXUE">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
 	<meta name="theme-color" content="#5e72e4">
@@ -442,15 +447,6 @@
 
 <div class="page-information-card-container">
 	
-		
-<div class="page-information-card card bg-gradient-secondary shadow-lg border-0">
-	<div class="card-body">
-		<h3 class="text-black">归档 : 2023/3 </h3>
-		
-	</div>
-</div>
-
-	
 </div>
 
 <div id="sidebar_mask"></div>
@@ -477,18 +473,39 @@
 		<div id="leftbar_part2" class="widget widget_search card bg-white shadow-sm border-0">
 			<div id="leftbar_part2_inner" class="card-body">
 				
-				<div class="nav-wrapper" style="padding-top: 5px; display:none; ">
+				<div class="nav-wrapper" style="padding-top: 5px;">
 	                <ul class="nav nav-pills nav-fill" role="tablist">
 						
+							<li class="nav-item sidebar-tab-switcher">
+								<a class="active show" id="leftbar_tab_catalog_btn" data-toggle="tab" href="#leftbar_tab_catalog" role="tab" aria-controls="leftbar_tab_catalog" no-pjax>文章目录</a>
+							</li>
+						
 						<li class="nav-item sidebar-tab-switcher">
-							<a class="active show" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
+							<a class="" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
 						</li>
 	                </ul>
 				</div>
 				<div>
 					<div class="tab-content" style="padding: 10px 10px 0 10px;">
 						
-						<div class="tab-pane fade text-center active show" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
+							<div class="tab-pane fade active show" id="leftbar_tab_catalog" role="tabpanel" aria-labelledby="leftbar_tab_catalog_btn">
+								<div id="leftbar_catalog"></div>
+								<script type="text/javascript">
+									$(function () {
+										$(document).headIndex({
+											articleWrapSelector: '#post_content',
+											indexBoxSelector: '#leftbar_catalog',
+											subItemBoxClass: "index-subItem-box",
+											itemClass: "index-item",
+											linkClass: "index-link",
+											offset: 80,
+										});
+									})
+								</script>
+								
+							</div>
+						
+						<div class="tab-pane fade text-center" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
 							<img id="leftbar_overview_author_image" src="/assets/img/auther.jpg" class="img-fluid rounded-circle shadow-sm" style="width: 100px;" alt="avatar">
 							<h6 id="leftbar_overview_author_name">XUEXUE</h6>
 							<nav class="site-state">
@@ -590,9 +607,8 @@
 	<main id="main" class="site-main" role="main">
 		
 		
-		
-				
-	<article class="post card bg-white shadow-sm border-0 ">
+			
+	<article class="post post-full card bg-white shadow-sm border-0 ">
 	<header class="post-header text-center">
 		
 		<a class="post-title" href="/2023/03/14/%E5%A6%82%E4%BD%95%E7%94%A8Python%E5%86%99%E4%B8%80%E4%B8%AA%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/">如何用Python写一个贪吃蛇游戏</a>
@@ -609,7 +625,7 @@
 							<div class="post-meta-devide">|</div>
 						
 						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-book" aria-hidden="true"></i>
+							<i class="fa fa fa-book" aria-hidden="true"></i>
 							<span id="busuanzi_container_page_pv">
 								阅读<span id="busuanzi_value_page_pv"></span>次
 							</span>
@@ -635,16 +651,126 @@
 		
 	</header>
 
-	<div class="post-content">
-		
-			
-				贪吃蛇游戏是一款经典的游戏，它的玩法简单、易上手，深受大众喜爱。在这篇文章中，我们将使用Python编写一个简单的贪吃蛇游戏，并通过代码分析来理解游戏的实现原理。
-准备工作在开始编写代码之前，我们需要安装Pygame模块，它是一款用于开发2D游戏的Python模块。可以通过以下命令安装：
-1pip install pygame
-同时，我们还需要准备...
-			
-		
+	<div class="post-content" id="post_content">
+		<p>贪吃蛇游戏是一款经典的游戏，它的玩法简单、易上手，深受大众喜爱。在这篇文章中，我们将使用Python编写一个简单的贪吃蛇游戏，并通过代码分析来理解游戏的实现原理。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在开始编写代码之前，我们需要安装Pygame模块，它是一款用于开发2D游戏的Python模块。可以通过以下命令安装：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pygame</span><br></pre></td></tr></table></figure>
+<p>同时，我们还需要准备好游戏所需的图片资源，包括蛇的头、身体、食物等等。</p>
+<h2 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h2><p>在Pygame中，游戏的主循环通常包含三个部分：事件处理、游戏逻辑和图形渲染。下面我们逐一来看这三个部分的实现。</p>
+<h3 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h3><p>在这个部分，我们需要处理用户输入的事件，例如按下上下左右键等等。对于每个事件，我们需要根据其类型进行相应的处理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Copy code</span><br><span class="line"><span class="keyword">for</span> event <span class="keyword">in</span> pygame.event.get():</span><br><span class="line">    <span class="keyword">if</span> event.<span class="built_in">type</span> == pygame.QUIT:  <span class="comment"># 点击了关闭按钮</span></span><br><span class="line">        pygame.quit()</span><br><span class="line">        sys.exit()</span><br><span class="line">    <span class="keyword">elif</span> event.<span class="built_in">type</span> == pygame.KEYDOWN:  <span class="comment"># 按下了键盘</span></span><br><span class="line">        <span class="keyword">if</span> event.key == pygame.K_UP:</span><br><span class="line">            direction = <span class="string">&quot;UP&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> event.key == pygame.K_DOWN:</span><br><span class="line">            direction = <span class="string">&quot;DOWN&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> event.key == pygame.K_LEFT:</span><br><span class="line">            direction = <span class="string">&quot;LEFT&quot;</span></span><br><span class="line">        <span class="keyword">elif</span> event.key == pygame.K_RIGHT:</span><br><span class="line">            direction = <span class="string">&quot;RIGHT&quot;</span></span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，我们处理了两种事件：点击了关闭按钮和按下了键盘。对于按下键盘的事件，我们根据按键的类型来决定蛇的移动方向。</p>
+<h3 id="游戏逻辑"><a href="#游戏逻辑" class="headerlink" title="游戏逻辑"></a>游戏逻辑</h3><p>在游戏逻辑部分，我们需要对蛇的状态进行更新，包括蛇的位置、长度、是否吃到食物等等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> direction == <span class="string">&quot;UP&quot;</span>:</span><br><span class="line">    snake_head[<span class="number">1</span>] -= cell_size</span><br><span class="line"><span class="keyword">elif</span> direction == <span class="string">&quot;DOWN&quot;</span>:</span><br><span class="line">    snake_head[<span class="number">1</span>] += cell_size</span><br><span class="line"><span class="keyword">elif</span> direction == <span class="string">&quot;LEFT&quot;</span>:</span><br><span class="line">    snake_head[<span class="number">0</span>] -= cell_size</span><br><span class="line"><span class="keyword">elif</span> direction == <span class="string">&quot;RIGHT&quot;</span>:</span><br><span class="line">    snake_head[<span class="number">0</span>] += cell_size</span><br><span class="line"></span><br><span class="line">snake_list.insert(<span class="number">0</span>, <span class="built_in">list</span>(snake_head))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> snake_head == food_pos:</span><br><span class="line">    food_spawn = <span class="literal">False</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    snake_list.pop()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> food_spawn:</span><br><span class="line">    food_pos = [random.randrange(<span class="number">0</span>, screen_width, cell_size),</span><br><span class="line">                random.randrange(<span class="number">0</span>, screen_height, cell_size)]</span><br><span class="line">    food_spawn = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查是否碰到了边界或自己的身体</span></span><br><span class="line"><span class="keyword">if</span> snake_head[<span class="number">0</span>] &gt;= screen_width <span class="keyword">or</span> snake_head[<span class="number">0</span>] &lt; <span class="number">0</span>:</span><br><span class="line">    game_over()</span><br><span class="line"><span class="keyword">if</span> snake_head[<span class="number">1</span>] &gt;= screen_height <span class="keyword">or</span> snake_head[<span class="number">1</span>] &lt; <span class="number">0</span>:</span><br><span class="line">    game_over()</span><br><span class="line"><span class="keyword">if</span> snake_head <span class="keyword">in</span> snake_list[<span class="number">1</span>:]:</span><br><span class="line">    game_over()</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，我们首先根据蛇的移动方向来更新蛇头的位置，然后在蛇的头部插入一个新的坐标，并删除蛇尾的坐标，以模拟蛇的移动。如果蛇头的坐标与食物的坐标重合，则表示蛇吃到了食物，此时我们需要生成一个新的食物，并将食物生成标志设置为True。如果蛇头的坐标碰到了边界或者碰到了自己的身体，则游戏结束。</p>
+<h3 id="图形渲染"><a href="#图形渲染" class="headerlink" title="图形渲染"></a>图形渲染</h3><p>在这个部分，我们需要将游戏场景渲染出来，并显示蛇、食物等图形。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 绘制蛇和食物</span></span><br><span class="line"><span class="keyword">for</span> pos <span class="keyword">in</span> snake_list:</span><br><span class="line">    pygame.draw.rect(screen, green, pygame.Rect(</span><br><span class="line">        pos[<span class="number">0</span>], pos[<span class="number">1</span>], cell_size, cell_size))</span><br><span class="line">pygame.draw.rect(screen, brown, pygame.Rect(</span><br><span class="line">    food_pos[<span class="number">0</span>], food_pos[<span class="number">1</span>], cell_size, cell_size))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新屏幕</span></span><br><span class="line">pygame.display.update()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制游戏帧率</span></span><br><span class="line">clock.tick(<span class="number">15</span>)</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，我们使用pygame.draw.rect()函数来绘制矩形，以表示蛇和食物。我们还需要通过pygame.display.update()函数来更新屏幕，以显示最新的游戏场景。最后，通过调用clock.tick()函数来控制游戏的帧率。</p>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre><code class="python">import pygame
+import random
+import sys
+
+# 初始化Pygame
+pygame.init()
+
+# 定义游戏界面大小、蛇身大小、食物颜色等参数
+screen_width = 800
+screen_height = 600
+cell_size = 20
+green = (0, 255, 0)
+brown = (165, 42, 42)
+
+# 创建游戏窗口
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption(&quot;Snake Game&quot;)
+
+# 初始化蛇的位置和移动方向
+snake_head = [screen_width/2, screen_height/2]
+snake_list = [snake_head, [snake_head[0]-cell_size, snake_head[1]], [
+    snake_head[0]-2*cell_size, snake_head[1]]]
+direction = &quot;RIGHT&quot;
+
+# 初始化食物位置和生成标志
+food_pos = [random.randrange(0, screen_width, cell_size),
+            random.randrange(0, screen_height, cell_size)]
+food_spawn = True
+
+# 初始化游戏时钟
+clock = pygame.time.Clock()
+
+# 定义游戏结束函数
+def game_over():
+    pygame.quit()
+    sys.exit()
+
+# 游戏主循环
+while True:
+    # 事件处理
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:  # 点击了关闭按钮
+            pygame.quit()
+            sys.exit()
+        elif event.type == pygame.KEYDOWN:  # 按下了键盘
+            if event.key == pygame.K_UP:
+                direction = &quot;UP&quot;
+            elif event.key == pygame.K_DOWN:
+                direction = &quot;DOWN&quot;
+            elif event.key == pygame.K_LEFT:
+                direction = &quot;LEFT&quot;
+            elif event.key == pygame.K_RIGHT:
+                direction = &quot;RIGHT&quot;
+# 更新蛇的位置
+if direction == &quot;UP&quot;:
+    snake_head[1] -= cell_size
+elif direction == &quot;DOWN&quot;:
+    snake_head[1] += cell_size
+elif direction == &quot;LEFT&quot;:
+    snake_head[0] -= cell_size
+elif direction == &quot;RIGHT&quot;:
+    snake_head[0] += cell_size
+
+# 添加新的蛇头
+snake_head = [snake_head[0] % screen_width, snake_head[1] % screen_height]
+if snake_head in snake_list[:-1]:
+    game_over()
+snake_list.insert(0, snake_head)
+
+# 检测是否吃到食物
+if snake_head == food_pos:
+    food_spawn = True
+else:
+    snake_list.pop()
+
+# 生成新的食物
+if food_spawn:
+    food_pos = [random.randrange(0, screen_width, cell_size),
+                random.randrange(0, screen_height, cell_size)]
+    food_spawn = False
+
+# 绘制蛇和食物
+screen.fill((255, 255, 255))
+for pos in snake_list:
+    pygame.draw.rect(screen, green, pygame.Rect(
+        pos[0], pos[1], cell_size, cell_size))
+pygame.draw.rect(screen, brown, pygame.Rect(
+    food_pos[0], food_pos[1], cell_size, cell_size))
+
+# 更新屏幕
+pygame.display.update()
+
+# 控制游戏帧率
+clock.tick(15)
+</code></pre>
+<p>完整代码中，我们通过不断地监听事件，来处理玩家的输入并更新蛇的位置和移动方向。在检测到蛇头的位置与食物位置重合时，我们生成一个新的食物，并将食物生成标志设置为True。在图形渲染的部分，我们使用pygame.draw.rect()函数来绘制矩形，并使用pygame.display.update()函数来更新屏幕。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文介绍了如何使用Python和Pygame库来编写一个贪吃蛇游戏。在编写游戏时，我们需要涉及到事件处理、游戏逻辑和图形渲染等方面。通过学习本文，相信读者已经掌握了一定的Pygame编程技进一步开发自己的游戏项目。除此之外，读者也可以通过学习其他Pygame的教程和示例代码，不断提升自己的Pygame编程技能，开发更加复杂、有趣的游戏项目。</p>
+<p>在实际开发过程中，还需要注意以下几点：</p>
+<p>游戏开发需要进行良好的项目规划和设计，包括游戏逻辑、界面设计、用户体验等方面。<br>需要进行有效的错误处理和调试，确保游戏运行稳定和流畅。<br>需要适当地优化游戏代码，提高游戏的运行效率和性能。<br>希望本文对读者学习Python和Pygame编程有所帮助。如果读者在学习过程中有任何疑问或建议，欢迎在评论区留言，我将尽力解答。</p>
+
 	</div>
+
+	
+
+	
 
 	
 		<div class="post-tags">
@@ -654,67 +780,120 @@
 	
 </article>
 
-
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
-		
-		<a class="post-title" href="/2023/03/14/hello-world/">Hello World</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2023-3-14 21:18:55 | 编辑于 2023-3-14 21:18:55">2023-3-14 21:18
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-book" aria-hidden="true"></i>
-							<span id="busuanzi_container_page_pv">
-								阅读<span id="busuanzi_value_page_pv"></span>次
-							</span>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							75 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							1 分钟
-						</div>
-					
-		</div>
-		
-	</header>
-
-	<div class="post-content">
-		
-			
-				Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you ca...
-			
-		
+	<div id="share_container">
+	<div id="share" data-initialized="true">
+		<a class="no-pjax icon-wechat" tooltip="分享到微信">
+			<button class="btn btn-icon btn-success">
+				<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
+			<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
+				豆
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
+			<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
+			<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
+			<button class="btn btn-icon btn-warning">
+				<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
+			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
+			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=http://xue.moe/2023/03/14/%E5%A6%82%E4%BD%95%E7%94%A8Python%E5%86%99%E4%B8%80%E4%B8%AA%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/&text=如何用Python写一个贪吃蛇游戏" tooltip="分享到 Telegram">
+			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
+			<button class="btn btn-icon btn-default">
+				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
+			</button>
+		</a>
 	</div>
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
+		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
+	</button>
+</div>
+<script type="text/javascript">
+	socialShare("#share", {
+	    title : '如何用Python写一个贪吃蛇游戏',
+	    description : '贪吃蛇游戏是一款经典的游戏，它的玩法简单、易上手，深受大众喜爱。在这篇文章中，我们将使用Python...',
+	    wechatQrcodeTitle : "分享到微信",
+	    wechatQrcodeHelper : '微信扫描二维码',
+	    source : 'http://xue.moe/2023/03/14/%E5%A6%82%E4%BD%95%E7%94%A8Python%E5%86%99%E4%B8%80%E4%B8%AA%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/'
+	});
+	$("#share_show")[0].onclick = function(){
+		$("#share_container").addClass("opened");
+	};
+	$("#share_copy_link")[0].onclick = function(){
+		let input = document.createElement('input');
+		document.body.appendChild(input);
+		input.setAttribute("value", window.location.href);
+		input.setAttribute("readonly", "readonly");
+		input.setAttribute("style", "opacity: 0;mouse-events:none;");
+		input.select();
+		if (document.execCommand('copy')){
+			iziToast.show({
+				title: '链接已复制',
+				message: "链接已复制到剪贴板",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#2dce89',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-check',
+				timeout: 5000
+			});
+		}else{
+			iziToast.show({
+				title: '复制失败',
+				message: "请手动复制链接",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#f5365c',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-close',
+				timeout: 5000
+			});
+		}
+		document.body.removeChild(input);
+	};
+</script>
 
-	
-</article>
 
 
 
 
+<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"></div><div class="post-navigation-item post-navigation-next"><span class="page-navigation-extra-text">下一篇 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span><a href="/2023/03/14/hello-world/" rel="next"> Hello World</a></div></div>
 
 
-			
+
+
+		
+		
 		
 		
 
