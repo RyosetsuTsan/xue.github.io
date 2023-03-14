@@ -3,22 +3,26 @@
 <html class="article-header-style-default">
 <head>
 	
-	<title>Hello World - XUEXUEのBLOG</title>
+	<title>MAC M1安装多个JDK版本及动态切换 - XUEXUEのBLOG</title>
 	<meta charset="utf-8">
 	
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
-	<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+	<meta name="description" content="#JDK版本下载  下载地址：https:&#x2F;&#x2F;www.azul.com&#x2F;downloads&#x2F;?package&#x3D;jdk筛选一下macOS的ARM 64-bit架构的JDK版本，下载对应版本即可。最好直接下载.dmg格式，最方便安装。 下载完毕之后直接双击运行按照操作一步步走，直到安装完毕。 打开 访达 ，shift+command+g跳转到&#x2F;Library&#x2F;Java&#x2F;J">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://xue.moe/2023/03/14/hello-world/index.html">
+<meta property="og:title" content="MAC M1安装多个JDK版本及动态切换">
+<meta property="og:url" content="http://xue.moe/2023/03/14/posts_001/index.html">
 <meta property="og:site_name" content="XUEXUEのBLOG">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="#JDK版本下载  下载地址：https:&#x2F;&#x2F;www.azul.com&#x2F;downloads&#x2F;?package&#x3D;jdk筛选一下macOS的ARM 64-bit架构的JDK版本，下载对应版本即可。最好直接下载.dmg格式，最方便安装。 下载完毕之后直接双击运行按照操作一步步走，直到安装完毕。 打开 访达 ，shift+command+g跳转到&#x2F;Library&#x2F;Java&#x2F;J">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/2391447/202205/2391447-20220523184055378-1650556142.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/2391447/202205/2391447-20220523184432001-922593407.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/2391447/202205/2391447-20220523184734825-766406956.png">
 <meta property="article:published_time" content="2023-03-14T13:18:55.701Z">
-<meta property="article:modified_time" content="2023-03-14T13:18:55.701Z">
+<meta property="article:modified_time" content="2023-03-14T15:40:29.681Z">
 <meta property="article:author" content="XUEXUE">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2022.cnblogs.com/blog/2391447/202205/2391447-20220523184055378-1650556142.png">
 
 	<meta name="theme-color" content="#5e72e4">
 	<meta name="theme-color-rgb" content="94,114,228">
@@ -610,13 +614,13 @@
 	<article class="post post-full card bg-white shadow-sm border-0 ">
 	<header class="post-header text-center">
 		
-		<a class="post-title" href="/2023/03/14/hello-world/">Hello World</a>
+		<a class="post-title" href="/2023/03/14/posts_001/">MAC M1安装多个JDK版本及动态切换</a>
 		<div class="post-meta">
 			
 						
 						<div class="post-meta-detail post-meta-detail-time">
 							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2023-3-14 21:18:55 | 编辑于 2023-3-14 21:18:55">2023-3-14 21:18
+							<time title="发布于 2023-3-14 21:18:55 | 编辑于 2023-3-14 23:40:29">2023-3-14 21:18
 							</time>
 						</div>
 					
@@ -635,7 +639,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-words">
 							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							75 字
+							385 字
 						</div>
 					
 						
@@ -651,19 +655,22 @@
 	</header>
 
 	<div class="post-content" id="post_content">
-		<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+		<p>#JDK版本下载</p>
+<ol>
+<li>下载地址：<a target="_blank" rel="noopener" href="https://www.azul.com/downloads/?package=jdk">https://www.azul.com/downloads/?package=jdk</a><br>筛选一下macOS的ARM 64-bit架构的JDK版本，下载对应版本即可。<img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  data-original="https://img2022.cnblogs.com/blog/2391447/202205/2391447-20220523184055378-1650556142.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image">最好直接下载.dmg格式，最方便安装。</li>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<li>下载完毕之后直接双击运行<img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  data-original="https://img2022.cnblogs.com/blog/2391447/202205/2391447-20220523184432001-922593407.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image">按照操作一步步走，直到安装完毕。</li>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<li>打开 访达 ，shift+command+g跳转到&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines目录下<img class="lazyload lazyload-style-1" src="data:image/svg+xml;base64,PCEtLUFyZ29uTG9hZGluZy0tPgo8c3ZnIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjZmZmZmZmMDAiPjxnPjwvZz4KPC9zdmc+"  data-original="https://img2022.cnblogs.com/blog/2391447/202205/2391447-20220523184734825-766406956.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" alt="image">查看刚安装的jdk版本是否已经安装好了。</li>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+</ol>
+<p>#配置环境</p>
+<ol>
+<li>打开终端输入以下命令 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑配置文件</span></span><br><span class="line">vim ~/.bash_profile <span class="comment">#.bash_profile对当前用户生效等价于.zprofile</span></span><br><span class="line"><span class="comment">##以下不用</span></span><br><span class="line"><span class="comment"># 如需切换到bash</span></span><br><span class="line">chsh -s /bin/bash</span><br><span class="line"><span class="comment"># 切换到zsh</span></span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure></li>
+<li>在配置文件中添加以下内容，下面的版本号替换成自己电脑上的版本，如果有多个JDK，照下面改一下就行 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置JDK路径</span></span><br><span class="line"><span class="built_in">export</span> JAVA_8_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home</span><br><span class="line"><span class="built_in">export</span> JAVA_11_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home</span><br><span class="line"><span class="comment"># 设置默认JDK版本</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=<span class="variable">$JAVA_11_HOME</span></span><br><span class="line">CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/tools.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:.</span><br><span class="line"><span class="comment"># 配置alias命令动态切换JDK版本  </span></span><br><span class="line"><span class="built_in">alias</span> jdk8=<span class="string">&quot;export JAVA_HOME=<span class="variable">$JAVA_8_HOME</span>&quot;</span></span><br><span class="line"><span class="built_in">alias</span> jdk11=<span class="string">&quot;export JAVA_HOME=<span class="variable">$JAVA_11_HOME</span>&quot;</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME</span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line"><span class="built_in">export</span> CLASSPATH</span><br></pre></td></tr></table></figure></li>
+<li>按esc<code>:wq</code>退出后执行 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></li>
+<li>验证是否成功 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">RyosetssandeAir:~ yuki$ java -version</span><br><span class="line">openjdk version <span class="string">&quot;11.0.15&quot;</span> 2022-04-19 LTS</span><br><span class="line">OpenJDK Runtime Environment Zulu11.56+19-CA (build 11.0.15+10-LTS)</span><br><span class="line">OpenJDK 64-Bit Server VM Zulu11.56+19-CA (build 11.0.15+10-LTS, mixed mode)</span><br><span class="line">RyosetssandeAir:~ yuki$ jdk8</span><br><span class="line">RyosetssandeAir:~ yuki$ java -version</span><br><span class="line">openjdk version <span class="string">&quot;1.8.0_302&quot;</span></span><br><span class="line">OpenJDK Runtime Environment (Zulu 8.56.0.23-CA-macos-aarch64) (build 1.8.0_302-b08)</span><br><span class="line">OpenJDK 64-Bit Server VM (Zulu 8.56.0.23-CA-macos-aarch64) (build 25.302-b08, mixed mode)</span><br></pre></td></tr></table></figure></li>
+</ol>
 
 	</div>
 
@@ -711,7 +718,7 @@
 				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
 			</button>
 		</a>
-		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=http://xue.moe/2023/03/14/hello-world/&text=Hello World" tooltip="分享到 Telegram">
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=http://xue.moe/2023/03/14/posts_001/&text=MAC M1安装多个JDK版本及动态切换" tooltip="分享到 Telegram">
 			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
 			</button>
@@ -728,11 +735,13 @@
 </div>
 <script type="text/javascript">
 	socialShare("#share", {
-	    title : 'Hello World',
-	    description : 'Welcome to Hexo! This is your very first post. Che...',
+	    title : 'MAC M1安装多个JDK版本及动态切换',
+	    description : '#JDK版本下载
+
+下载地址：https://www.azul.com/downloads/?pac...',
 	    wechatQrcodeTitle : "分享到微信",
 	    wechatQrcodeHelper : '微信扫描二维码',
-	    source : 'http://xue.moe/2023/03/14/hello-world/'
+	    source : 'http://xue.moe/2023/03/14/posts_001/'
 	});
 	$("#share_show")[0].onclick = function(){
 		$("#share_container").addClass("opened");
