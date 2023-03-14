@@ -1,138 +1,112 @@
-# Future Imperfect Theme on Jekyll
->by [Kapitonenko](https://kaptn.ru)
+![Argon](https://cdn.jsdelivr.net/gh/solstice23/cdn@master/argon_new_animate.svg)
 
-<https://future-imperfect.kaptn.ru> - demo  
-<https://github.com/kaptn3/future-imperfect/> - repository
+# Hexo-Theme-Argon
 
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badge/)
-![Future Imperfect Theme preview](https://cdn.rawgit.com/kaptn3/blog/4ccc6d6a/readme_files/screen.png)
+[Argon-Theme](https://github.com/solstice23/argon-theme) 的 Hexo 移植版
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Content management](#content-management)
-    - [Template](#template)
-    - [Example of post](#example-of-post)
-    - [Category page](#category-page)
-4. [Features](#features)
-    - [Categories](#categories)
-    - [Comments](#comments)
-    - [Icons](#icons)
-    - [Post Image](#post-image)
-    - [Featured image](#featured-image)
-    - [Edit link](#edit-link)
-    - [Web analytics](#web-analytics)
-5. [Upgrading Theme](#upgrading-theme)
-6. [Thanks to the following](#thanks-to-the-following)
-7. [Todo](#todo)
-8. [Donate](#donate)
-9. [Copyright and license](#copyright-and-license)
+# 关于
 
-## Installation 
-1. Download, clone or fork repo `git clone git@github.com:kaptn3/blog.git`
-2. Enter the folder: `cd blog/` 
-3. Start Jekyll server: `jekyll s`
+Hexo-Theme-Argon 移植自 WordPress 版 Argon 主题。
 
-Access, [localhost:4000](http://localhost:4000)
+## 项目状态
 
-## Usage
-If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by Smashing Magazine.
+目前没有精力维护移植版，只维护 Wordpress 版本。Wordpress 的新功能将不会来到 Hexo 版本，只进行必要的 BUG 修复。~~（很久没有使用 Hexo）~~
 
-If you have any questions please ask me at [GitHub Issues](https://github.com/kaptn3/future-imperfect/issues).
+欢迎提交 Pull Request 贡献/移植新功能/修复 BUG。
 
-## Content management
-### Template
-Template of posts setting is in `_drafts/template.md`. `Layout` is always named `post`. `Title` is a title of post, writing in quotation marks. `Date` written in the following format: `yyyy-mm-dd hh:mm`. In `category` specifies one category. In `icon` written the name of icon (its in the folder `images`). In `tags` is possible to write multiple tags using a comma. In `image` specify the path to image preview (can not fill). And in `preview` you can write `0` to on the main page didn't show the announcement of the post. 
+# 使用
 
-More details about all features and setting can be view on [here](#features).
+## 1. 安装并启用主题
 
-### Example of post
+1. 在 `Hexo 根目录/themes` 目录下 Clone 本 Repo。
+
 ```
-layout: post
-title:  "Lorem"
-date:   2017-06-04 00:00
-category: category_name
-icon: git
-keywords: tag1, tag2
-image: 1.png
-preview: 0
+git clone https://github.com/solstice23/hexo-theme-argon.git
+```
+安装 ejs 渲染器。
+
+```
+npm install hexo-renderer-ejs
 ```
 
-### Category page
-If you want to add a page of category you have to create folder with name of category and file `index.html`, which should contain the following:  
+2. 重命名 Clone 后的文件夹为 `argon`
+
+3. 在 `Hexo 根目录/_config.yml` 中将 `theme` 项改为 `argon`
+
+## 2. 修改主题配置
+
+1. 将 `Hexo 根目录/themes/argon/_config.yml` 复制到 `Hexo 根目录/source/_data` 文件夹中，并重命名为 `argon.yml`
+
+2. 修改复制后的配置文件
+
+## 3. 配置搜索功能
+
+1. 在 `Hexo 根目录/themes` 目录下执行
+
 ```
----
-layout: default
-title: Category1
-permalink: /category1/ 
----
-
-{% include category.html %}
+npm install hexo-generator-search --save
 ```
 
-You can see example in [here](https://github.com/kaptn3/future-imperfect/blob/master/category1) or [here](https://github.com/kaptn3/blog/blob/master/category2).
+2. 在 `Hexo 根目录/_config.yml` 中添加选项
 
-## Features
-### Categories
-In blog page, we categorize posts into several categories by url, all category pages use same template html file - `_includes/category.html`. Links of category in menu is in `_data.links.yml`.
+```
+search:
+  path: search.xml
+  field: post
+  content: true
+```
 
-For example: URL is `localhost:4000/category1`. In `_data.links.yml` we define this category named category1, so in `_includes/category.html` we get this URL(/category1/) and change it to my category(category1), then this page are posts about category1.
+# 更新
 
-### Comments
-I use [HyperComments](http://hypercomments.com) instead of other tool, Disqus, so it's slower and don't allows to anonymously send messages. Code of comment is in `_includes/comments` and it included in every post.
+在 `Hexo 根目录/themes/argon` 目录中执行
 
-### Icons
-For categories I use svg-icons in `images`. Еhe icon is automatically assigned to the post by its category. The icon name must be `category_name.svg`.
+```
+git pull
+```
 
-### Post Image
-All images used in posts that are in `post-image` and its are categorized. For example, images in post of category1's category is in `post-img/category1`. 
+# 文章内参数
 
-### Featured image
-You can specify the preview image for post in [YAML Front Matter](http://jekyllrb.com/docs/frontmatter/). In front matter called "image" to indicate the name of the image. The picture must be located in a category folder.    
-For example, we write post of category_name's category. In folder `post-img/category_name` put the preview image with the title "1.png" and in front matter write: `image: 1.png`. [Example](https://github.com/kaptn3/future-imperfect/blob/master/_posts/2017-06-08-learn-git4.md).
+Argon 支持给文章设定一些单独的参数，例如文章头图
 
-Also, in front matter you can control the announcement of record post. By default, the announcement consists of 35 words. Writing in the front matter called "preview" the number 0, the announcement will not be displayed for this entry. [Example](https://github.com/kaptn3/blog/blob/master/_posts/2017-06-08-learn-git4.md).
+| 参数名                   | 解释                               |
+|--------------------------|-----------------------------------|
+| thumbnail                | 文章头图地址                       |
+| first_image_as_thumbnail | 该篇文章是否选用文中第一张图作为头图 |
+| after_post               | 文末附加内容                       |
+| excerpt                  | 文章自定义摘要                     |
 
-### Edit link
-All posts can be edited by users through link: `github.com/kaptn3/future-imperfect/edit/master/{{ page.path }}` or `github.com/kaptn3/blog/edit/master/{{ post.path }}`. 
+# Hexo 版相比 Wordpress 版
 
-### Web analytics
-I use [Yandex Metrika](https://metrika.yandex.ru) to do web analytics, you can choose either to realize it, just paste your code in `includes/analytics.html`.
++ 保留了 Wordpress 版的大部分特性
++ 相同的界面
++ 暂时不支持多语言（欢迎 PR）
++ 目前仅支持 Gitalk、giscus、waline 评论系统（欢迎 PR）
 
-## Upgrading Theme
-Blog is always being improved by its users, so sometimes one may need to upgrade.
+# Telegram 频道
+[t.me/argontheme](https://t.me/argontheme)
 
-Ensure there's an upstream remote
+自动推送更新消息以及其他关于 Argon 的消息
 
-If `git remote -v` doesn't have an upstream listed, you can do the following to add it:
+> Readme 待完善...
 
-`git remote add upstream https://github.com/kaptn3/future-imperfect.git`
-Pull in the latest changes
+# 更新日志
 
-`git pull upstream master`
-There may be merge conflicts, so be sure to fix the files that git lists if they occur. That's it!
+## 20201031 v1.0.2
++ 新增不蒜子用于统计访问人次和文章阅读量
++ 再次修复 Page 生成问题
++ 更改高亮显示颜色为红色
++ 修复 Gitalk 评论不加载问题
++ 修复文章目录不能数字+标题的问题
 
-## Thanks to the following
-[Jekyll](http://jekyllrb.com/)  
-[HTML5Up](https://html5up.net/)  
-[Font Awesome](http://fontawesome.io/icons/)  
-[HyperComments](http://hypercomments.com)
+## 20200908 v1.0.1
++ 修复搜索结果点击后不会关闭问题
++ 修复手机搜索按钮重复问题
++ 修复 Page 生成问题
 
-## TODO
-- [ ] Add 404 page
-- [ ] Search system
-- [x] Add fontawesome 5
-- [ ] Add paginator
+## 20200905 v1.0.0
++ 增加文章自定义摘要
++ 支持 More 标签
++ 修复 Gitalk 边距问题
 
-## Donate
-In `includes/donate.html` you'll see form for donation, includes in every post.  
-Also if this project let you enjoy your blog time, you can give me a cup of coffee :)
-
-[Donate =)](https://money.yandex.ru/to/410013162271067/10)
-
-## Copyright and license
-The theme is taken Future Imperfect Theme from [HTML5 UP](https://html5up.net).
-
-It is under [the MIT license](/LICENSE).
-
-Enjoy :yum:
+## 20200822 v1.0.0.beta
++ 最初版本
